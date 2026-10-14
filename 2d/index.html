@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2d - Conditional Render</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
+    function ConditionalRender() {
+      const [show, setShow] = useState(false);
+      return (
+        <div>
+          <h2>Conditional Rendering</h2>
+          <button onClick={() => setShow(!show)}>Toggle</button>
+          {show ? <h3>Welcome to React!</h3> : <h3>Component Hidden</h3>}
+        </div>
+      );
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<ConditionalRender />);
+  </script>
+</body>
+</html>

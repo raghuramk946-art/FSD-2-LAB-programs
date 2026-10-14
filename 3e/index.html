@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3e - map()</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function StudentList() {
+      const students = ["Lakshmi", "Ravi", "Anitha", "Kiran"];
+      return (
+        <div>
+          <h2>Student List</h2>
+          <ul>
+            {students.map((student, index) => (
+              <li key={index}>{student}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<StudentList />);
+  </script>
+</body>
+</html>

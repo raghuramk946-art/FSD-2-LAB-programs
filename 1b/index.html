@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>JavaScript Selectors</title>
+</head>
+<body>
+ <h2 id="title">Welcome</h2>
+ <p class="text">First Paragraph</p>
+ <p class="text">Second Paragraph</p>
+ <ul>
+ <li>Apple</li>
+ <li>Banana</li>
+ <li class="fruit">Cherry</li>
+ </ul>
+ <button onclick="selectElements()">Click Here</button>
+ <script>
+ function selectElements() {
+ // Select by ID
+ let title = document.getElementById("title");
+ title.innerHTML = "JavaScript Selectors";
+ // Select by Class
+ let para = document.getElementsByClassName("text");
+ para[0].innerHTML = "First Paragraph Changed";
+ // Select by Tag Name
+ let items = document.getElementsByTagName("li");
+ items[1].innerHTML = "Mango";
+ // Select using querySelector
+ let fruit = document.querySelector(".fruit");
+ fruit.innerHTML = "Orange";
+ // Select using querySelectorAll
+ let allItems = document.querySelectorAll("li");
+ alert("Total List Items: " + allItems.length);
+ }
+ </script>
+</body>
+</html>

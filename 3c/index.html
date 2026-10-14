@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3c - Props</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function Welcome(props) {
+      return (
+        <div>
+          <h2>Welcome Component</h2>
+          <p>Hello, {props.name}!</p>
+        </div>
+      );
+    }
+    function App() {
+      return (
+        <div>
+          <h1>Props Example</h1>
+          <Welcome name="Lakshmi" />
+        </div>
+      );
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

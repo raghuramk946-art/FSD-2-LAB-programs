@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3d - Forms</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
+    function Form() {
+      const [name, setName] = useState("");
+      const handleSubmit = (event) => {
+        event.preventDefault();
+        alert("Name: " + name);
+      };
+      return (
+        <div>
+          <h2>React Form</h2>
+          <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
+            <br /><br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      );
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<Form />);
+  </script>
+</body>
+</html>
